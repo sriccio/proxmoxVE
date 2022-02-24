@@ -29,8 +29,8 @@ class VncWebsocket extends PVEPathClassBase
      * @link https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/vncwebsocket
      * @return array|null
      */
-    public function get(): ?array
+    public function get($params = []): ?array
     {
-        return $this->getPve()->getApi()->get($this->getPathAdditional());
+        return $this->getPve()->getApi()->get($this->getPathAdditional(), $params);
     }
 }
